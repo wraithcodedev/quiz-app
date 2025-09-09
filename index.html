@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Quiz App 🎓</h1>
+
+    <!-- Dashboard -->
+    <section id="dashboard">
+      <h2>Select a Topic</h2>
+      <p>📌 Rules: 15 Questions • 20s each • One attempt per question</p>
+      <div class="topics">
+        <button class="topic-btn" data-topic="sql">SQL</button>
+        <button class="topic-btn" data-topic="os">Operating System</button>
+        <button class="topic-btn" data-topic="c">C Programming</button>
+        <button class="topic-btn" data-topic="networks">Computer Networks</button>
+        <button class="topic-btn" data-topic="python">Python</button>
+        <button class="topic-btn" data-topic="java">Java</button>
+      </div>
+    </section>
+
+    <!-- Quiz Screen -->
+    <section id="quiz" class="hidden">
+      <div class="quiz-header">
+        <p id="progress">Question 1 / 15</p>
+        <p id="timer">⏳ 20s</p>
+      </div>
+      <p id="question"></p>
+      <div id="options" class="options"></div>
+      <button id="nextBtn" disabled>Next</button>
+    </section>
+
+    <!-- Result Screen -->
+    <section id="result" class="hidden">
+      <h2>Quiz Completed 🎉</h2>
+      <p id="finalScore"></p>
+      <button onclick="restartQuiz()">🔄 Restart</button>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #6a11cb, #2575fc, #ff416c, #ff4b2b);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  overflow: hidden;
+  color: #fff;
+}
+
+.hidden { display: none !important; }
+
+/* Container */
+.quiz-container {
+  width: 620px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  color: #ffea00;
+  text-shadow: 0 0 10px rgba(255,255,255,0.7), 0 0 20px rgba(255,234,0,0.8);
+}
+
+/* Dashboard */
+.topics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.topic-btn, .option-btn, #nextBtn, #result button {
+  padding: 14px 16px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.25s ease;
+  box-shadow: 0px 6px 15px rgba(0,0,0,0.25);
+}
+
+.topic-btn {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+}
+.topic-btn:hover { transform: translateY(-3px) scale(1.03); }
+
+/* Quiz */
+.quiz-header {
+  display: flex; justify-content: space-between; margin-bottom: 16px; font-weight: 600;
+}
+#timer { font-weight: 800; color: #ff1744; }
+#question { font-size: 1.3rem; margin-bottom: 16px; }
+
+.options { display: grid; gap: 10px; }
+
+.option-btn {
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+  text-align: left;
+}
+.option-btn.correct  { background: #2e7d32; }
+.option-btn.wrong    { background: #c62828; }
+.option-btn:disabled { opacity: 0.65; }
+
+#nextBtn {
+  margin-top: 18px;
+  background: linear-gradient(135deg, #36d1dc, #5b86e5);
+}
+#nextBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* Result */
+#result h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  color: #00e676;
+  text-shadow: 0 0 10px rgba(0,230,118,0.7);
+}
+#result p { margin: 10px 0; font-size: 1.2rem; }
+#result button {
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+}
+#result button:hover { transform: scale(1.05); }
+
+/* Animations */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-20px);} to { opacity: 1; transform: translateY(0);} }
+@keyframes gradientMove { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
